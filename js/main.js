@@ -1,0 +1,31 @@
+function showMood(){
+	name = document.getElementById('name').value;
+	mood = document.getElementById('mood').value;
+
+
+	if(!name || !mood){
+		alert("Please fill all fields");
+		return false;
+	}
+
+	if(mood == "happy" || mood == "Happy"){
+		face = " :) ";
+	} else if(mood == "sad" || mood == "Sad"){
+		face = " :( ";
+	} else{
+		face = " :| ";
+	}
+
+	moodString = name+" is "+mood+" today "+face;
+
+	holder = document.getElementById('holder');
+
+	holder.innerHTML = moodString;
+
+}
+
+function clearMood(){
+	document.getElementById("moodForm").reset();
+	holder = document.getElementById('holder');
+	holder.innerHTML = "";
+}
